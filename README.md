@@ -1,1 +1,3 @@
-# tokenManagementApplication-IndividualProject
+# Token Management Application
+
+## Digitizing the Token Distribution System.
