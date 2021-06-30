@@ -1,8 +1,11 @@
 package com.example.tokenmanagement
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tokenmanagement.Fragment.QrFragment
 import com.example.tokenmanagement.Fragment.SettingsFragment
+import com.example.tokenmanagement.ui.ScannerActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -31,9 +34,8 @@ class MainActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_qr -> {
-                    val fragment = SettingsFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
-                        .commit()
+                    val intent = Intent(this,ScannerActivity::class.java)
+                    startActivity(intent)
                     return@OnNavigationItemSelectedListener true
                 }
 

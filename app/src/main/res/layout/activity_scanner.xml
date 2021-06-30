@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="50dp"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".ui.ScannerActivity">
 
     <TextView
         android:id="@+id/tvText"
