@@ -1,11 +1,10 @@
-package com.example.tokenmanagement
+package com.example.tokenmanagement.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.tokenmanagement.Fragment.QrFragment
 import com.example.tokenmanagement.Fragment.SettingsFragment
-import com.example.tokenmanagement.ui.ScannerActivity
+import com.example.tokenmanagement.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

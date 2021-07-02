@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.example.tokenmanagement.MainActivity
+import com.example.tokenmanagement.ui.MainActivity
 import com.example.tokenmanagement.R
 import com.example.tokenmanagement.repository.UserRepository
 import com.google.android.material.snackbar.Snackbar
@@ -42,11 +42,15 @@ class LoginActivity : AppCompatActivity() {
                             etPassword.text.toString()
                         )
                         if (response.success == true) {
+                            //Stores Login Information on Shared Preference
+
                             // Open Dashboard
                             startActivity(
                                 Intent(
-                                    this@LoginActivity, MainActivity::class.java
+                                    this@LoginActivity, SharedPreference::class.java
                                 )
+                                    .putExtra("phone_number", etPhonenumber.text.toString())
+                                    .putExtra("password",etPassword.text.toString())
                             )
                             finish()
                         } else {

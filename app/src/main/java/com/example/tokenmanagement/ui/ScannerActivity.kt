@@ -26,6 +26,7 @@ EasyPermissions.RationaleCallbacks {
     var btnEnterCode: Button? = null
     var btnEnter: Button? = null
     var edtCode: EditText? = null
+    var tvCreateRoom : TextView? = null
     var tvText: TextView? = null
     var hide: Animation? = null
     var reveal: Animation? = null
@@ -72,6 +73,11 @@ EasyPermissions.RationaleCallbacks {
             cardView2!!.visibility = View.GONE
             cardView1!!.visibility = View.VISIBLE
             tvText!!.setText("Enter Code Here")
+        }
+
+        tvCreateRoom?.setOnClickListener{
+            val intent = Intent(this@ScannerActivity, CreateRoomActivity::class.java)
+            startActivity(intent)
         }
 
     }
@@ -139,6 +145,7 @@ EasyPermissions.RationaleCallbacks {
         btnEnter = findViewById(R.id.btnEnter)
         edtCode = findViewById(R.id.edtCode)
         tvText = findViewById(R.id.tvText)
+        tvCreateRoom = findViewById(R.id.tvCreateRoom)
 
         hide = AnimationUtils.loadAnimation(this, android.R.anim.fade_out)
         reveal = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
