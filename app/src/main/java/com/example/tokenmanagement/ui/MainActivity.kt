@@ -3,6 +3,7 @@ package com.example.tokenmanagement.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tokenmanagement.Fragment.RoomFragment
 import com.example.tokenmanagement.Fragment.SettingsFragment
 import com.example.tokenmanagement.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,8 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         private val onNavItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
-                R.id.navigation_settings -> {
-                    val fragment = SettingsFragment()
+                R.id.navigation_active -> {
+                    val fragment = RoomFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
                         .commit()
                     return@OnNavigationItemSelectedListener true

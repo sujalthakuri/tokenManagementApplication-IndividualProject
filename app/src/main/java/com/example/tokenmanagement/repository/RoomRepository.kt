@@ -22,9 +22,15 @@ class RoomRepository : MyApiRequest() {
         }
     }
 
-    suspend fun showRoom(code : String): RoomResponse {
+//    suspend fun showRoom(code : String): RoomResponse {
+//        return apiRequest {
+//            roomApi.showRoom(code)
+//        }
+//    }
+
+    suspend fun showAllRoom(): RoomResponse {
         return apiRequest {
-            roomApi.showRoom(code)
+            roomApi.showAllRoom()
         }
     }
 

@@ -6,19 +6,15 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Room(
+class Token(
     @PrimaryKey
-    var _id : String = "",
-    val room_name : String? = null,
-    val createdBy : String? = null,
-    val code : String? = null,
-    val active_token : String? = null,
-    val people : String? = null,
-    val average_time : String? = null
+    var _id : String? = "",
+    var code : String? = null,
+    var active_token : String? = null,
+    var people : String? = null,
+    var average_time : String? = null
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString().toString(),
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -29,8 +25,6 @@ class Room(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(_id)
-        parcel.writeString(room_name)
-        parcel.writeString(createdBy)
         parcel.writeString(code)
         parcel.writeString(active_token)
         parcel.writeString(people)
@@ -41,12 +35,12 @@ class Room(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Room> {
-        override fun createFromParcel(parcel: Parcel): Room {
-            return Room(parcel)
+    companion object CREATOR : Parcelable.Creator<Token> {
+        override fun createFromParcel(parcel: Parcel): Token {
+            return Token(parcel)
         }
 
-        override fun newArray(size: Int): Array<Room?> {
+        override fun newArray(size: Int): Array<Token?> {
             return arrayOfNulls(size)
         }
     }

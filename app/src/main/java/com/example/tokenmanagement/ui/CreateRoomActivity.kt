@@ -19,6 +19,7 @@ import java.lang.Exception
 
 class CreateRoomActivity : AppCompatActivity() {
     private lateinit var etRoomname : EditText
+    private lateinit var etPeople : EditText
     private lateinit var btnCreate : Button
     var active_user : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +31,8 @@ class CreateRoomActivity : AppCompatActivity() {
             if(validator()) {
                 val room = Room(
                     room_name = etRoomname.text.toString(),
-                    createdBy = active_user
+                    createdBy = active_user,
+                    people = etPeople.text.toString()
                 )
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
@@ -66,11 +68,17 @@ class CreateRoomActivity : AppCompatActivity() {
             etRoomname.setError("Please Enter Room Name")
             return false
         }
+        if (TextUtils.isEmpty(etPeople.text)) {
+            etPeople.isFocusable()
+            etPeople.setError("Please Enter number of People")
+            return false
+        }
         return true
     }
 
     private fun retrieveValues(){
         etRoomname = findViewById(R.id.etRoomname)
+        etPeople = findViewById(R.id.etPeople)
         btnCreate = findViewById(R.id.btnCreate)
     }
 
