@@ -3,7 +3,6 @@ package com.example.tokenmanagement.repository
 import com.example.tokenmanagement.api.MyApiRequest
 import com.example.tokenmanagement.api.RoomApi
 import com.example.tokenmanagement.api.ServiceBuilder
-import com.example.tokenmanagement.api.UserApi
 import com.example.tokenmanagement.entity.Room
 import com.example.tokenmanagement.entity.User
 import com.example.tokenmanagement.response.LoginResponse
@@ -22,11 +21,11 @@ class RoomRepository : MyApiRequest() {
         }
     }
 
-//    suspend fun showRoom(code : String): RoomResponse {
-//        return apiRequest {
-//            roomApi.showRoom(code)
-//        }
-//    }
+    suspend fun showRoom(code : String): RoomResponse {
+        return apiRequest {
+                roomApi.showRoom(code)
+        }
+    }
 
     suspend fun showAllRoom(): RoomResponse {
         return apiRequest {

@@ -14,19 +14,6 @@ interface UserApi {
         @Body user : User
     ): Response<LoginResponse>
 
-    @Multipart
-    @PUT("/profile/update")
-    suspend fun updateUser(
-        @Part("_id") _id : String,
-        @Part("first_name") first_name : String,
-        @Part("last_name") last_name : String,
-        @Part("username") username : String,
-        @Part("dob") dob : String,
-        @Part("platform") platform : String,
-        @Part("genre") genre : String,
-        @Part file: MultipartBody.Part
-    ): Response<LoginResponse>
-
     @FormUrlEncoded
     @POST("user/login")
     suspend fun checkUser(
@@ -37,7 +24,7 @@ interface UserApi {
     @FormUrlEncoded
     @POST("userProfile/")
     suspend fun showProfile(
-        @Field("username") username : String
+        @Field("phone_number") phone_number : String
     ): Response<UserResponse>
 
 

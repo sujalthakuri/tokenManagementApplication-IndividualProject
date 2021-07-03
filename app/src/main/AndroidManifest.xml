@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TokenManagement"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.IndividualRoomActivity"></activity>
         <activity android:name=".ui.CreateRoomActivity" />
         <activity android:name=".ui.SharedPreference" />
         <activity android:name=".ui.ScannerActivity" />
         <activity android:name=".ui.SignupActivity" />
-        <activity android:name=".ui.LoginActivity">
-
-        </activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".Fragment.IndividualRoomFragment"></activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

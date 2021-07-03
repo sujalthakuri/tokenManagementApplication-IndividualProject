@@ -21,12 +21,10 @@ interface RoomApi {
     suspend fun showAllRoom(
     ): Response<RoomResponse>
 
-//    @FormUrlEncoded
-//    @POST("room/showone")
-//    suspend fun showRoom(
-//        @Field("code") code : String
-//    ): Response<RoomResponse>
-
-
+    @FormUrlEncoded
+    @POST("room/showone")
+    suspend fun showRoom(
+        @Field("code") code : String
+    ): Response<RoomResponse>
 
 }

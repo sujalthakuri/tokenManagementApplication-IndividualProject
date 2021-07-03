@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         navbar.setOnNavigationItemSelectedListener(onNavItemSelectedListener)
 
 
+
+
     }
 
         private val onNavItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->

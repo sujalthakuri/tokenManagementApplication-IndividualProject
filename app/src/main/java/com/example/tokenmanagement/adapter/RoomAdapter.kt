@@ -1,14 +1,20 @@
 package com.example.tokenmanagement.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tokenmanagement.R
 import com.example.tokenmanagement.entity.Room
-import com.example.tokenmanagement.entity.Token
+import com.example.tokenmanagement.ui.IndividualRoomActivity
+
+
+var fragmentManager: FragmentManager? = null
 
 class RoomAdapter(
     val lstRoom : List<Room>,
@@ -40,11 +46,21 @@ class RoomAdapter(
         holder.tvCreatedby.text = roomInformation.createdBy
         holder.tvActivetoken.text = roomInformation.active_token
         holder.tvPeople.text = roomInformation.people
+
+        holder.tvRoomname.setOnClickListener{
+
+
+            var intent = Intent(context,IndividualRoomActivity::class.java)
+            intent.putExtra("code",roomInformation.code)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
         return lstRoom.size
 
     }
+
+
 
 }
