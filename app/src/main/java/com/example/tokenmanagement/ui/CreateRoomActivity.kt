@@ -26,13 +26,17 @@ class CreateRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_room)
         retrieveValues()
+        get()
 
         btnCreate.setOnClickListener{
             if(validator()) {
                 val room = Room(
                     room_name = etRoomname.text.toString(),
                     createdBy = active_user,
-                    people = etPeople.text.toString()
+                    people = etPeople.text.toString(),
+                    active_token = "0",
+                    average_time = "N/A"
+
                 )
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
@@ -83,7 +87,7 @@ class CreateRoomActivity : AppCompatActivity() {
     }
 
     private fun get() {
-        val sharedPreference = getSharedPreferences("MyPref", MODE_PRIVATE)
+        val sharedPreference = getSharedPreferences("login-information", MODE_PRIVATE)
         active_user = sharedPreference.getString("phone_number", "").toString()
     }
 }

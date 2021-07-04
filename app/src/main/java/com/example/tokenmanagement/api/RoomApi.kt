@@ -27,4 +27,13 @@ interface RoomApi {
         @Field("code") code : String
     ): Response<RoomResponse>
 
+    @FormUrlEncoded
+    @PUT("room/update")
+    suspend fun updateToken(
+        @Field("active_token") active_token : String,
+        @Field("people") people : String,
+        @Field("average_time") average_time : String,
+        @Field("code") code : String
+    ): Response<RoomResponse>
+
 }

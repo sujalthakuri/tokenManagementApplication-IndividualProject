@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tokenmanagement.R
@@ -31,7 +30,7 @@ class RoomAdapter(
             tvRoomname = view.findViewById(R.id.tvRoomname)
             tvCreatedby = view.findViewById(R.id.tvCreatedby)
             tvActivetoken = view.findViewById(R.id.tvActivetoken)
-            tvPeople = view.findViewById(R.id.tvPeople)
+            tvPeople = view.findViewById(R.id.People)
         }
     }
 

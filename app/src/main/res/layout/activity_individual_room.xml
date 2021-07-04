@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/activeToken" />
 
     <TextView
-        android:id="@+id/tvAveragetime"
+        android:id="@+id/tvAverage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
@@ -66,14 +66,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tvActivetoken" />
 
     <TextView
-        android:id="@+id/tvPeople"
+        android:id="@+id/People"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
-        android:text="People: 50"
+        android:text="People:"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.798"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvActivetoken" />
 
@@ -110,4 +110,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNext"
         app:layout_constraintVertical_bias="0.766" />
+
+    <TextView
+        android:id="@+id/tvAveragetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="68dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNext"
+        tools:text="N/A" />
+
+    <TextView
+        android:id="@+id/tvPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toEndOf="@+id/tvAveragetime"
+        app:layout_constraintTop_toBottomOf="@+id/btnNext" />
 </androidx.constraintlayout.widget.ConstraintLayout>
