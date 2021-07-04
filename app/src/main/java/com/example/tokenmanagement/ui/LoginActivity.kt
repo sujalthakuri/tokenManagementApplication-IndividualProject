@@ -50,7 +50,6 @@ class LoginActivity : AppCompatActivity() {
                                     this@LoginActivity, SharedPreference::class.java
                                 )
                                     .putExtra("phone_number", etPhonenumber.text.toString())
-                                    .putExtra("password",etPassword.text.toString())
                             )
                             finish()
                         } else {

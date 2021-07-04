@@ -9,7 +9,7 @@ import com.example.tokenmanagement.R
 class SharedPreference : AppCompatActivity() {
 
     var phone_number = ""
-    var password = ""
+    var code = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +17,7 @@ class SharedPreference : AppCompatActivity() {
 
         val intent = intent
         phone_number = intent.getStringExtra("phone_number").toString()
-        password = intent.getStringExtra("password").toString()
+        code = intent.getStringExtra("code").toString()
 
         save()
         get()
@@ -27,7 +27,7 @@ class SharedPreference : AppCompatActivity() {
         val sharedPreference = getSharedPreferences("login-information", MODE_PRIVATE)
         val editor = sharedPreference.edit()
         editor.putString("phone_number",phone_number)
-        editor.putString("password",password)
+        editor.putString("code",code)
         editor.apply()
         Toast.makeText(this@SharedPreference, "Saved!", Toast.LENGTH_SHORT).show()
     }
@@ -35,7 +35,7 @@ class SharedPreference : AppCompatActivity() {
     private fun get(){
         val sharedPreference = getSharedPreferences("login-information", MODE_PRIVATE)
         val phone_number = sharedPreference.getString("phone_number","")
-        val password = sharedPreference.getString("password","")
+        val code = sharedPreference.getString("code","")
         startActivity(
             Intent(
                 this@SharedPreference, MainActivity::class.java

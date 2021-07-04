@@ -59,9 +59,9 @@ EasyPermissions.RationaleCallbacks {
             if (edtCode!!.text.toString().isNullOrEmpty()) {
                 Toast.makeText(this, "Please enter code", Toast.LENGTH_SHORT).show()
             } else {
-                var value = edtCode!!.text.toString()
-
-                Toast.makeText(this, value, Toast.LENGTH_SHORT).show()
+                var intent = Intent(this, IndividualRoomActivity::class.java)
+                intent.putExtra("code", edtCode!!.text.toString())
+                startActivity(intent)
 
             }
         }

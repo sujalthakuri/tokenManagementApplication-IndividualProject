@@ -14,16 +14,24 @@ class TokenRepository : MyApiRequest() {
 
     private val tokenApi =
         ServiceBuilder.buildService(TokenApi::class.java)
-    suspend fun createToken(token: Token) : TokenResponse {
+    suspend fun createToken(code: String, phone_number : String, token_number : String) : TokenResponse {
         return apiRequest{
-            tokenApi.createToken(token)
+            tokenApi.createToken(code, phone_number, token_number)
         }
     }
 
-    suspend fun showToken(code : String): TokenResponse {
+    suspend fun showToken(code : String, phone_number: String): TokenResponse {
         return apiRequest {
-            tokenApi.showToken(code)
+            tokenApi.showToken(code, phone_number)
         }
     }
+
+    suspend fun showAllToken(code : String,): TokenResponse {
+        return apiRequest {
+            tokenApi.showAllToken(code)
+        }
+    }
+
+
 
 }

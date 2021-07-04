@@ -11,21 +11,25 @@ interface TokenApi {
 
 
 
-    @POST("room/token/create")
+    @FormUrlEncoded
+    @POST("token/receive")
     suspend fun createToken(
-        @Body token : Token
+        @Field("code") code : String,
+        @Field("phone_number") phone_number : String,
+        @Field("token_number") token_number : String
     ): Response<TokenResponse>
 
     @FormUrlEncoded
-    @PUT("room/showall")
+    @POST("token/all")
     suspend fun showAllToken(
         @Field("code") code : String
     ): Response<TokenResponse>
 
     @FormUrlEncoded
-    @POST("room/showone")
+    @POST("token/information")
     suspend fun showToken(
-        @Field("code") code : String
+        @Field("code") code : String,
+        @Field("phone_number") phone_number: String
     ): Response<TokenResponse>
 
 
